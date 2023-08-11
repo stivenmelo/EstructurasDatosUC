@@ -1,0 +1,10 @@
+Funciones:
+  no retornan valor
+  los que retornan valor
+  Paso de pamametros:
+    valor => copia
+    referencia => direccion
+
+Variables
+  Escalares => valor y referencia 
+  Arreglos => Referencia
