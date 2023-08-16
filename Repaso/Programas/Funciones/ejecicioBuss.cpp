@@ -31,7 +31,7 @@ int main () {
   sobrecupo = calcularSobrecupo(buses,sobrecupo);
   imprimir(buses);
   
-  cout<<endl<<"Sobrecupo en main: "<<sobrecupo;
+  cout<<endl<<"Sobrecupo: "<<sobrecupo;
   
 }
 
