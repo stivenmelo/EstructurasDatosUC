@@ -3,7 +3,7 @@ using namespace std;
 
 
 
-int insertar(int pila[5],int indice){
+int Insertar(int pila[5],int indice){
 	int valorPila = 0;
 	int indi = indice;
 	
@@ -15,7 +15,6 @@ int insertar(int pila[5],int indice){
 			cout<<endl<<"Pila LLena";
 			return indi;
 		}
-		cout<<endl<<"aca";
 		indi++;
 		pila[indi] = valorPila;
 		return indi;
@@ -23,6 +22,17 @@ int insertar(int pila[5],int indice){
 	
 	cout<<endl<<"Pila LLena";
 	return indi;
+}
+
+int Eliminar(int pila[5],int indice){
+	if(indice == -1){
+		cout<<endl<<"Pila Vacia \n";
+		return indice;
+	}
+	
+	pila[indice] = 0;
+	indice--;
+	return indice;
 }
 
 void imprimir(int pila[5],int indice){
@@ -50,18 +60,20 @@ int main() {
 		switch(seleccion) 
 		{
 		    case 1:
-		    	indice = insertar(pila,indice);
+		    	indice = Insertar(pila,indice);
 		    	imprimir(pila,indice);
 		    break;
 		    case 2:
+		    	indice = Eliminar(pila,indice);
+		    	imprimir(pila,indice);
 		    break;
-		    case 3: 
+		    case 3:
+				 programaIniciado = false;
 		    break;
 		    
 		    default:
 				cout<<endl<<"Seleccion no valida\n";
 			break; 
 		}
-		
 	} 
 }
