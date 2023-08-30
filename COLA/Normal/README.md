@@ -8,5 +8,5 @@
 ![Funcionamiento](./IMG/ExplicacionFuncionamiento.jpeg)
 
 ## Creacion 
-![Metodos](./IMG/"Metodosutilizar.jpeg")
+![Metodos](./IMG/MetodosUtilizar.jpeg)
 ![Structure](./IMG/StructureCola.jpeg)
