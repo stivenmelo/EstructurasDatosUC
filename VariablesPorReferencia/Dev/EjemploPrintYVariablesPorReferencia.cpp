@@ -12,6 +12,6 @@ int main(){
 	   printf("Digite el tercer numero: ");
 	   scanf("%d",&z);
        result=x+y+z;
-       printf("la suma es %d\n",result);
+       printf("%d + %d + %d = %d \n",x,y,z,result);
        return 0;
 }
