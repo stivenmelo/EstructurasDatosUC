@@ -1,3 +1,9 @@
+/*
+Fecha 2023-08-30
+Creado Por STIVEN DANIEL MELO GUAYAZAN
+*/
+
+
 #include <iostream>
 #include <string.h>
 using namespace std;
