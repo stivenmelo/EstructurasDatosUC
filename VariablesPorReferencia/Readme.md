@@ -2,4 +2,7 @@
 
 ## Explicacion scand dif
 
-![Funcionamiento](./IMG/explicacionVarPorRef.jpeg)
+![explicacionVarPorRef](./IMG/explicacionVarPorRef.jpeg)
+
+## Explicacion Apuntador como variable 
+![ApuntadorComoVariableExplicacion](./IMG/ApuntadorComoVariableExplicacion.jpeg)
