@@ -18,6 +18,41 @@ void Imprimir(int cola[5],struct Indices indiceCola){
 	cout<<endl<<"\n------------------------------------------";
 }
 
+struct Indices Eliminar(int cola[5],struct Indices indiceCola){
+	int valor;
+	
+	int contadorCola = 0 ;
+	
+	if(indiceCola.Fin == -1 && indiceCola.Inico == -1){
+		cout<<endl<<"-----------------Cola Vacia-----------------\n";
+		return  indiceCola;
+	}
+	
+	for(int i = 0 ; i<5; i++){
+		if(cola[i]>0 || cola[i]<0){
+			contadorCola = contadorCola + 1;
+		}
+	}
+	
+	if(contadorCola = 1){
+		indiceCola.Fin = -1;
+		indiceCola.Inico = -1;
+		for(int i = 0 ; i<5; i++){
+				cola[i] = 0;
+		}
+		
+		return indiceCola;
+	}
+	
+	//Ultimo Caso Flujo Correcto
+	
+	
+	
+	Imprimir(cola,indiceCola);
+	
+	return indiceCola;
+}
+
 struct Indices Insertar(int cola[5],struct Indices indiceCola){
 	int valor;
 	if(indiceCola.Fin == -1){
@@ -32,7 +67,6 @@ struct Indices Insertar(int cola[5],struct Indices indiceCola){
 	}
 	else if(indiceCola.Fin == 4){
 		cout<<endl<<"-----------------Cola llena-----------------\n";
-		cout<<endl<<"\n------------------------------------------";
 	}
 	else
 	{
@@ -46,8 +80,6 @@ struct Indices Insertar(int cola[5],struct Indices indiceCola){
 	
 	return indiceCola;
 }
-
-
 
 
 int main()
@@ -81,7 +113,7 @@ int main()
 		    	indiceCola = Insertar(cola,indiceCola);
 		    break;
 		    case 2:
-		    	//indiceCola = Eliminar(cola,indiceCola);
+		    	indiceCola = Eliminar(cola,indiceCola);
 		    break;
 		    case 3:
 				 programaIniciado = false;
