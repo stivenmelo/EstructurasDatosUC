@@ -1,5 +1,5 @@
 # Variables por referencia
 
-## Explicacion 
+## Explicacion scand dif
 
 ![Funcionamiento](./IMG/explicacionVarPorRef.jpeg)
