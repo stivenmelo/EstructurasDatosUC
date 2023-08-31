@@ -19,9 +19,8 @@ void Imprimir(int cola[5],struct Indices indiceCola){
 }
 
 struct Indices Eliminar(int cola[5],struct Indices indiceCola){
-	int valor;
 	
-	int contadorCola = 0 ;
+	int numeroElementosCola = 0 ;
 	
 	if(indiceCola.Fin == -1 && indiceCola.Inico == -1){
 		cout<<endl<<"-----------------Cola Vacia-----------------\n";
@@ -30,35 +29,41 @@ struct Indices Eliminar(int cola[5],struct Indices indiceCola){
 	
 	for(int i = 0 ; i<5; i++){
 		if(cola[i]>0 || cola[i]<0){
-			contadorCola = contadorCola + 1;
+			numeroElementosCola = numeroElementosCola + 1;
 		}
 	}
 	
-	if(contadorCola = 1){
+	if(numeroElementosCola == 1){
 		indiceCola.Fin = -1;
 		indiceCola.Inico = -1;
 		for(int i = 0 ; i<5; i++){
 				cola[i] = 0;
 		}
-		
 		return indiceCola;
 	}
 	
-	//Ultimo Caso Flujo Correcto
 	
+	cola[indiceCola.Inico] = 0;
+	indiceCola.Inico = indiceCola.Inico + 1;
 	
-	
-	Imprimir(cola,indiceCola);
 	
 	return indiceCola;
 }
 
 struct Indices Insertar(int cola[5],struct Indices indiceCola){
 	int valor;
+	
+	
+	
 	if(indiceCola.Fin == -1){
 		
 		cout<<"Digite el valor: ";
 		cin>>valor;
+		
+		if(valor == 0){
+			cout<<endl<<"Valor no valido tiene que ser un numero cualquiera menos 0\n";
+			return indiceCola;
+		}
 		
 		indiceCola.Inico = 0;
 		indiceCola.Fin = 0;
@@ -72,11 +77,14 @@ struct Indices Insertar(int cola[5],struct Indices indiceCola){
 	{
 		cout<<"Digite el valor: ";
 		cin>>valor;
+		if(valor == 0){
+			cout<<endl<<"Valor no valido tiene que ser un numero cualquiera menos 0\n";
+			return indiceCola;
+		}
+		
 		indiceCola.Fin = indiceCola.Fin + 1;
 		cola[indiceCola.Fin] = valor;	
 	}
-	
-	Imprimir(cola,indiceCola);
 	
 	return indiceCola;
 }
@@ -111,9 +119,11 @@ int main()
 		{
 		    case 1:
 		    	indiceCola = Insertar(cola,indiceCola);
+		    	Imprimir(cola,indiceCola);
 		    break;
 		    case 2:
 		    	indiceCola = Eliminar(cola,indiceCola);
+		    	Imprimir(cola,indiceCola);
 		    break;
 		    case 3:
 				 programaIniciado = false;
