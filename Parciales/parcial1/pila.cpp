@@ -67,7 +67,7 @@ void CantidadNumerosImpares(int pila[10]){
 		}
 	}
 	
-	cout<<endl<<"Tiene un total de "<< contadorImpares << "numeros impares \n";
+	cout<<endl<<"Tiene un total de "<< contadorImpares << " numeros impares \n"<<"------------------------------------------";;
 	
 }
 
@@ -95,7 +95,7 @@ int main() {
 	
 	while(programaIniciado){
 		
-		cout<<endl<<"1.insertar \n2.eliminar \n3.Buscar \n4.Invertir cola \n5.Salir \n";
+		cout<<endl<<"1.Insertar \n2.Eliminar \n3.Buscar \n4.Invertir cola \n5.Salir \n";
 		cout<<endl<<"SELECCION:";
 		cin>>seleccion;
 		
@@ -111,6 +111,9 @@ int main() {
 		    break;
 		    case 3:
 				 Buscar(pila);
+		    break;
+		    case 4:
+				 programaIniciado = false;
 		    break;
 		    case 5:
 				 programaIniciado = false;
