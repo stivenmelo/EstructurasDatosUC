@@ -58,7 +58,7 @@ void Buscar(int pila[10]){
 	}
 	
 	if(!encontroValor && valorBusqueda != 0){
-		cout<<endl<<"no se encontro el valor "<< valorBusqueda <<" en la pila. \n";
+		cout<<endl<<"No se encontro el valor "<< valorBusqueda <<" en la pila.";
 	}
 	
 }
@@ -98,10 +98,13 @@ void InvertirPila(int pila[10],int indice){
 }
 
 void imprimir(int pila[10],int indice){
+	
+	cout<<endl<<"\n------------------------------------------";
+	
 	for(int i = 9 ; i>=0; i--){
 			cout<<endl<<"Pila ubicacion "<<i+1<<" Tiene valor :"<<pila[i];
 	}
-	cout<<endl<<"indice: "<<indice<<"\n------------------------------------------";
+	cout<<endl<<"\n Indice: "<<indice<<"\n------------------------------------------";
 	
 	CantidadNumerosImpares(pila);
 }
