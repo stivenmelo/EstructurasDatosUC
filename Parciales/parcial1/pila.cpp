@@ -10,6 +10,11 @@ int Insertar(int pila[10],int indice){
 	cout<<endl<<"Valor Pila:";
 	cin>>valorPila;
 	
+	if(valorPila == 0){
+		cout<<endl<<"valor no valido\n";
+		return indi;
+	}
+	
 	if(indice>=-1 && indice <=10){
 		if(pila[9] != 0){
 			cout<<endl<<"Pila LLena \n";
@@ -71,6 +76,27 @@ void CantidadNumerosImpares(int pila[10]){
 	
 }
 
+
+void InvertirPila(int pila[10],int indice){
+	if(indice == -1){
+		cout<<endl<<"Pila Vacia \n";
+	}
+	
+	int p = 0;
+	int q = indice;
+	
+	while(p<q){
+		
+		pila[p] = pila[p] + pila[q];
+		pila[q] = pila[p] - pila[q];
+		pila[p] = pila[p] - pila[q];
+		
+		p++;
+		q--;
+	}
+	
+}
+
 void imprimir(int pila[10],int indice){
 	for(int i = 9 ; i>=0; i--){
 			cout<<endl<<"Pila ubicacion "<<i+1<<" Tiene valor :"<<pila[i];
@@ -79,10 +105,6 @@ void imprimir(int pila[10],int indice){
 	
 	CantidadNumerosImpares(pila);
 }
-
-
-
-
 
 int main() {
 	int pila[10],indice = -1,valor =0, seleccion=0;
@@ -111,9 +133,11 @@ int main() {
 		    break;
 		    case 3:
 				 Buscar(pila);
+				 imprimir(pila,indice);
 		    break;
 		    case 4:
-				 programaIniciado = false;
+				 InvertirPila(pila,indice);
+				 imprimir(pila,indice);
 		    break;
 		    case 5:
 				 programaIniciado = false;
