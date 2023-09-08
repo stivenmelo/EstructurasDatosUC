@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+/*
+
+Programa Creado por: STIVEN DANIEL MELO GUAYAZAN
+
+*/
 
 
 int Insertar(int pila[10],int indice){
@@ -59,6 +64,10 @@ void Buscar(int pila[10]){
 	
 	if(!encontroValor && valorBusqueda != 0){
 		cout<<endl<<"No se encontro el valor "<< valorBusqueda <<" en la pila.";
+	}
+	
+	if(valorBusqueda == 0){
+		cout<<endl<<"valor no valido";
 	}
 	
 }
