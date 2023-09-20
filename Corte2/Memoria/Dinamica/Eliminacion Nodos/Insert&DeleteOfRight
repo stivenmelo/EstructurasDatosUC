@@ -1,0 +1,26 @@
+q = *cab
+Mientras (q -> sig != null){
+ q = q -> sig;
+}
+
+q -> sig = localizar;
+q -> sig -> info = num;
+q -> sig -> sig = null;
+
+
+if(*cab == null){
+  ¨Lista vacia¨
+}
+else if(q -> sig == null){
+printf("\nEl valor eliminado es: %d\n", q->info);	
+			delete q;
+			*cab = NULL;
+}
+else {
+    while (q -> sig -> sig !=null){
+        q -> sig = null;
+    }
+¨Valor eliminado¨  q-> sig -> info
+free( q -> sig)
+q -> sig = null;
+}
