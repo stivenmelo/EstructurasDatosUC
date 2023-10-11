@@ -1,3 +1,14 @@
+/*
+	--- Taller Lista doblemente encadenada - Agenda  --- 	
+		
+	Nota: El taller fue realizado con clases con el fin de realizar las declaraciones de forma mas amena y limpia, con el fin de que al leer el codigo sea mucho mas
+	sencillo.
+	
+	Nombres: Johan Sebastian Vargas Sanchez & Stiven Daniel Melo Guayazan
+	Grupo: Estructuras de Datos -- Grupo 5
+*/
+
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -10,15 +21,19 @@ public:
     string telefono;
     string correo;
     Nodo* sig;
-
-    Nodo(int _codigo, string _nombre, string _telefono, string _correo)
+    
+	// Declaracion del constructor y el valor '_' en las variables es utilizado para inicializar los argumentos con su respectiva seguridad.
+	
+    Nodo(int _codigo, string _nombre, string _telefono, string _correo) 
         : ant(NULL), codigo(_codigo), nombre(_nombre), telefono(_telefono), correo(_correo), sig(NULL) {}
 };
 
 class Agenda {
 public:
     Nodo* cab;
-
+	
+	// Tener en cuenta que las llaves {} son utilizadas para asegurar el alcance del scope debido a que los metodos son utilizados desde el switch case.
+	
     Agenda() : cab(NULL) {}
 
     void insertar(int codigo, string nombre, string telefono, string correo) {
@@ -56,7 +71,7 @@ public:
     }
 
     void eliminar(int codigo) {
-        Nodo* nodoAEliminar = buscar(codigo);
+        Nodo* nodoAEliminar = buscar(codigo); // uso de recursividad
         if (nodoAEliminar) {
             if (nodoAEliminar->ant) {
                 nodoAEliminar->ant->sig = nodoAEliminar->sig;
@@ -76,8 +91,8 @@ public:
     void imprimir() {
         Nodo* actual = cab;
         while (actual) {
-            cout << "codigo: " << actual->codigo << ", Nombre: " << actual->nombre
-                << ", telefono: " << actual->telefono << ", Correo: " << actual->correo << "\n";
+            cout << "\nCodigo: " << actual->codigo << ", Nombre: " << actual->nombre
+                << ", Telefono: " << actual->telefono << ", Correo: " << actual->correo << "\n";
             actual = actual->sig;
         }
     }
@@ -89,7 +104,7 @@ int main() {
     string nombre, telefono, correo;
 
     do {
-        cout << "Menu:\n";
+        cout << "\nMenu:\n";
         cout << "1. Insertar\n";
         cout << "2. Buscar por codigo\n";
         cout << "3. Eliminar por codigo\n";
@@ -99,7 +114,7 @@ int main() {
 
         switch (opcion) {
             case 1: {
-                cout << "Ingrese el codigo: ";
+                cout << "\nIngrese el codigo: ";
                 cin >> codigo;
                 cout << "Ingrese el nombre: ";
                 cin.ignore();
@@ -113,27 +128,29 @@ int main() {
                 break;
             }
             case 2: {
-                cout << "Ingrese el codigo a buscar: ";
+                cout << "\nIngrese el codigo a buscar: ";
                 cin >> codigo;
                 Nodo* encontrado = lista.buscar(codigo);
                 if (encontrado) {
                     cout << "Nodo encontrado:\n";
-                    cout << "codigo: " << encontrado->codigo << ", Nombre: " << encontrado->nombre
-                        << ", telefono: " << encontrado->telefono << ", Correo: " << encontrado->correo << "\n";
+                    cout << "Codigo: " << encontrado->codigo << ", Nombre: " << encontrado->nombre
+                        << ", Telefono: " << encontrado->telefono << ", Correo: " << encontrado->correo << "\n";
                 } else {
                     cout << "Nodo no encontrado.\n";
                 }
+                cout << "\nY la lista general es la siguiente: \n";
+                lista.imprimir();
                 break;
             }
             case 3: {
-                cout << "Ingrese el codigo a eliminar: ";
+                cout << "\nIngrese el codigo a eliminar: ";
                 cin >> codigo;
                 lista.eliminar(codigo);
                 lista.imprimir();
                 break;
             }
             case 4: {
-                cout << "Saliendo del programa...\n";
+                cout << "\nSaliendo del programa...\n";
                 break;
             }
             default: {
