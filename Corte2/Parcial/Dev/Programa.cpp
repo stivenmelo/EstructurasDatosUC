@@ -1,8 +1,8 @@
 /*
-	--- Taller Lista en Memoria Dinamica --- 
+	--- Segunda Evaluación Parcial --- 
 	
-	** Metodos utilizados :  insertarPorDerecha, insertarPorIzquierda, eliminarPorIzquierda, 
-	eliminarPorDerecha, Buscar, mostrarLista **
+	** Metodos utilizados :  insertarPorDerecha, insertarPorIzquierda, eliminarPorIzquierda, GenerarNodoModulo, 
+	eliminarPorDerecha, , mostrarLista **
 	
 	NOTA: No se utilizo malloc en una variable de localizar debido a que al realizar una busqueda de la documentacion vimos
 	mas complejo utilizar el puntero, asi que se ideo una nueva forma dentro de una clase, utilizando conocimientos basicos 
@@ -21,7 +21,7 @@ struct Nodo {
 };
 
 class Lista {
-private:
+public:
     Nodo* inicio;
     Nodo* Modulo3;
 
@@ -79,12 +79,6 @@ public:
 			}
             tempIni = tempIni->siguiente;
         }
-        
-        
-
-        
-    	
-        
     }
 
     void eliminarPorDerecha() {
@@ -121,8 +115,8 @@ public:
         delete temp;
     }
 
-    void mostrarLista() {
-        Nodo* temp = inicio;
+    void mostrarLista(Nodo* nodoImprimir) {
+        Nodo* temp = nodoImprimir;
         while (temp != NULL) {  
             cout << temp->dato << " ";
             temp = temp->siguiente;
@@ -181,7 +175,8 @@ int main() {
         cout << "3. Eliminar por derecha" << endl;
         cout << "4. Eliminar por izquierda" << endl;
         cout << "5. Contrar nodos Pares" << endl;
-        cout << "6. Salir" << endl;
+        cout << "6. Modulo3" << endl;
+        cout << "7. Salir" << endl;
         cout << "\nSeleccione una opcion: ";
         cin >> opcion;
 
@@ -191,43 +186,52 @@ int main() {
                 cin >> valor;
                 lista.insertarPorDerecha(valor);
                 cout << "\nLa lista actualmente es: ";
-                lista.mostrarLista();
+                lista.mostrarLista(lista.inicio);
                 break;
             case 2:
                 cout << "\nIngresa un valor: ";
                 cin >> valor;
                 lista.insertarPorIzquierda(valor);
                 cout << "\nLa lista actualmente es: ";
-                lista.mostrarLista();
+                lista.mostrarLista(lista.inicio);
                 break;
             case 3: 
             	cout << "\n-- Se elimino correctamente por derecha --\n";
                 lista.eliminarPorDerecha();
                 cout << "\nLa lista actualmente es: ";
-                lista.mostrarLista();
+                lista.mostrarLista(lista.inicio);
                 break;
             case 4:
             	cout << "\n-- Se elimino correctamente por izquierda --\n";
                 lista.eliminarPorIzquierda();
                 cout << "\nLa lista actualmente es: ";
-                lista.mostrarLista();
+                lista.mostrarLista(lista.inicio);
                 break;
             case 5:
             	//cout << "\nIngresa un valor que desea buscar: ";
                 //cin >> valorBusqueda;
                 //lista.Buscar(valorBusqueda);
                 cout << "\nLa lista actualmente es: ";
-                lista.mostrarLista();
+                lista.mostrarLista(lista.inicio);
                 cout << "\n";
                 lista.ContarNodosPares();
                 break;
             case 6:
+                lista.GenerarNodoModulo();
+                cout << "\nLa lista actualmente es: ";
+                lista.mostrarLista(lista.inicio);
+                cout << "\nLa lista Modulo actualmente es: ";
+                lista.mostrarLista(lista.Modulo3);
+                lista.Modulo3 = NULL;
+                cout << "\n";
+                break;
+            case 7:
                 cout << "Saliendo..." << endl;
                 break;
             default:
                 cout << "Opcion incorrecta. Intentalo de nuevo." << endl;
         }
-    } while (opcion != 6);
+    } while (opcion != 7);
 
     return 0;
 }
