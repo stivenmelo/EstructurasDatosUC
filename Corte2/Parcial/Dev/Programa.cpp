@@ -1,3 +1,10 @@
+/*
+	--- Segunda Evaluación Parcial --- 
+	
+	Nombre: Stiven Daniel Melo Guayazan
+	Grupo: Estructuras de Datos -- Grupo 5
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -194,9 +201,6 @@ int main() {
                 lista.mostrarLista(lista.inicio);
                 break;
             case 5:
-            	//cout << "\nIngresa un valor que desea buscar: ";
-                //cin >> valorBusqueda;
-                //lista.Buscar(valorBusqueda);
                 cout << "\nLa lista actualmente es: ";
                 lista.mostrarLista(lista.inicio);
                 cout << "\n";
