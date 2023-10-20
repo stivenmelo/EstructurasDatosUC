@@ -1,17 +1,3 @@
-/*
-	--- Segunda Evaluación Parcial --- 
-	
-	** Metodos utilizados :  insertarPorDerecha, insertarPorIzquierda, eliminarPorIzquierda, GenerarNodoModulo, 
-	eliminarPorDerecha, , mostrarLista **
-	
-	NOTA: No se utilizo malloc en una variable de localizar debido a que al realizar una busqueda de la documentacion vimos
-	mas complejo utilizar el puntero, asi que se ideo una nueva forma dentro de una clase, utilizando conocimientos basicos 
-	de progrmacion orientada a objetos y por medio de un contructor darle un valor directamente inicial al puntero. 
-	
-	Nombres: Johan Sebastian Vargas Sanchez & Stiven Daniel Melo Guayazan
-	Grupo: Estructuras de Datos -- Grupo 5
-*/
-
 #include <iostream>
 using namespace std;
 
