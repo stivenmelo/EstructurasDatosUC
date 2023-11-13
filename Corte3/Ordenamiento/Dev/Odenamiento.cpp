@@ -59,6 +59,42 @@ public:
             contarSort(exp);
         }
     }
+void heapifyMonti(int arreglo[], int arregloSize, int i) {
+    int mayor = i; // Inicializa el mayor como la raíz
+    int izquierda = 2 * i + 1; // índice izquierdo del hijo
+    int derecha = 2 * i + 2; // índice derecho del hijo
+
+    // Si el hijo izquierdo es mayor que la raíz
+    if (izquierda < arregloSize && arreglo[izquierda] > arreglo[mayor])
+        mayor = izquierda;
+
+    // Si el hijo derecho es mayor que la raíz
+    if (derecha < arregloSize && arreglo[derecha] > arreglo[mayor])
+        mayor = derecha;
+
+    // Si el mayor no es la raíz
+    if (mayor != i) {
+        std::swap(arreglo[i], arreglo[mayor]);
+
+        // Recursivamente hacer heapify en el subárbol afectado
+        heapifyMonti(arreglo, arregloSize, mayor);
+    }
+}
+
+void heapSort() {
+    // Construye el monticulo (reorganiza el arreglo)
+    for (int i = arregloSize / 2 - 1; i >= 0; i--)
+        heapifyMonti(arreglo, arregloSize, i);
+
+    // Extrae un elemento del montículo uno por uno
+    for (int i = arregloSize - 1; i > 0; i--) {
+        // Mueve la raíz al final
+        std::swap(arreglo[0], arreglo[i]);
+
+        // llama a heapify en el monticulo reducido
+        heapifyMonti(arreglo, i, 0);
+    }
+}
 
 private:
     int arreglo[arregloSize];
@@ -143,7 +179,15 @@ int main() {
                 std::cout << "Arreglo Original: ";
             	ordenamiento.imprimirArreglo();
                 break;
-            case 5:
+			case 5:
+			    ordenamiento.reinicializar();
+			    std::cout << "Arreglo Original: ";
+			    ordenamiento.imprimirArreglo();
+			    ordenamiento.heapSort();
+			    std::cout << "Arreglo ordenado con Heap Sort: ";
+			    ordenamiento.imprimirArreglo();
+			    break;
+            case 6:
                 return 0;
             default:
                 std::cout << "Opción no valida. Intentalo de nuevo.\n";
