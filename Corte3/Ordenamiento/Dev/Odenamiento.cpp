@@ -1,5 +1,13 @@
 #include <iostream>
 
+
+/*
+
+stiven daniel melo guayazan
+Y
+johan sebastian vargas sanchez
+*/
+
 const int arregloSize = 20;
 
 class Ordenamiento {
@@ -35,9 +43,15 @@ public:
                     int temp = arreglo[j];
                     arreglo[j] = arreglo[j + 1];
                     arreglo[j + 1] = temp;
+                    
+                    operaciones++;
                 }
             }
         }
+        
+        std::cout << "Operaciones realizadas durante Bubble Sort: " << operaciones << std::endl;
+        
+        operaciones= 0;
     }
 
     void shellSort() {
@@ -98,6 +112,7 @@ void heapSort() {
 
 private:
     int arreglo[arregloSize];
+    int operaciones;
 
     int encontrarMaximo() {
         int max = arreglo[0];
@@ -145,8 +160,9 @@ int main() {
         std::cout << "2. Ordenar con Shell Sort\n";
         std::cout << "3. Ordenar con Radix Sort\n";
         std::cout << "4. Reinicializar el arreglo\n";
-        std::cout << "5. Salir\n";
-        std::cout << "Opción: ";
+        std::cout << "5. manticulos\n";
+        std::cout << "6. Salir\n";
+        std::cout << "Opcion: ";
         std::cin >> opcion;
 
         switch (opcion) {
