@@ -4,6 +4,13 @@
 
 #include <string>
 
+/*
+
+stiven daniel melo guayazan
+Y
+johan sebastian vargas sanchez
+*/
+
 using namespace std;
 struct NotasEstudiante {
   double NotasAsignaturas[6];
